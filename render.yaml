@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: opsrunner-ocr-backend
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: OCR_AUTH_TOKEN
+        generateValue: true
+      - key: NODE_VERSION
+        value: 20
